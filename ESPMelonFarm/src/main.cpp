@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 
+float data = 0;
+
 void setup()
 {
   // Open serial communications and wait for port to open:
@@ -16,5 +18,9 @@ void loop()
   if (Serial.available())
   {
     Serial.write(Serial.read());
+    
+    data = Serial.read();
+    
+    serial.println(data);
   }
 }
